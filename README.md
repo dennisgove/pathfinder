@@ -11,7 +11,7 @@ For each turn, the board will ask us if we want to move `LEFT`, `RIGHT`, `UP`, o
 This shows a 10 x 10 board with 10 randomly placed rocks. The player appears in the top-right corner, denoted by the `o` character. Rocks are denoted by the `@` character and open spaces with a `.`.
 
 ```
-         Starting Board                            Winning Board
+Starting Board                            Winning Board
 Position is x=0, y=0                      Position is x=9, y=9
 ________________________________          ________________________________
 | o  .  .  .  .  .  .  .  .  @ |          | .  .  .  .  .  .  .  .  .  @ |
@@ -27,7 +27,7 @@ ________________________________          ________________________________
 ________________________________          ________________________________
                                                                          
                                                                              
-          Hit a Rock                               Went off Board
+Hit a Rock                                Went off Board
 Position is x=2, y=5                      Position is x=10, y=4
 ________________________________          ________________________________
 | .  .  .  .  .  .  .  .  .  @ |          | .  .  .  .  .  .  .  .  .  @ |
