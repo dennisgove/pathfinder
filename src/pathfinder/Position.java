@@ -69,4 +69,9 @@ public class Position {
 
     return false;
   }
+
+  @Override
+  public String toString(){
+    return String.format("x=%d, y=%d", x, y);
+  }
 }

@@ -145,6 +145,7 @@ public class GameBoard {
     if(null != header){
       System.out.println(header);
     }
+    System.out.println(String.format("Position is %s", position));
     System.out.println(toString());
 
   }
