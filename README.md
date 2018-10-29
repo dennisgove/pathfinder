@@ -8,7 +8,7 @@ For each turn, the board will ask us if we want to move `LEFT`, `RIGHT`, `UP`, o
 
 ### Our Board
 
-This shows a 10 x 10 board with 10 randomly placed rocks. The player appears in the top-right corner, denoted by the `o` character. Rocks are denoted by the `@` character and open spaces with a `.`.
+This shows a 10 x 10 board with 10 randomly placed rocks. The player appears in the top-left corner, denoted by the `o` character. Rocks are denoted by the `@` character and open spaces with a `.`.
 
 ```
 Starting Board                            Winning Board
@@ -39,7 +39,7 @@ ________________________________          ________________________________
 | .  @  .  @  .  .  .  .  .  . |          | .  @  .  @  .  .  .  .  .  . |
 | .  .  .  .  .  .  .  .  .  . |          | .  .  .  .  .  .  .  .  .  . |
 | .  .  .  .  .  .  .  .  .  . |          | .  .  .  .  .  .  .  .  .  . |
-| @  .  .  .  .  .  .  .  .  . |          | @  .  .  .  .  .  .  .  .  $ |
+| @  .  .  .  .  .  .  .  .  . |          | @  .  .  .  .  .  .  .  .  . |
 ________________________________          ________________________________
 
 ```
