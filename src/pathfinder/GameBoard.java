@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class GameBoard {
 
-  private int delay = 1000;
+  private int delay = 750;
 
   private int width;
   private int height;
