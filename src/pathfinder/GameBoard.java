@@ -237,25 +237,34 @@ public class GameBoard {
   }
 
   private boolean isValidBoard(){
-    return numberOfPaths(0, 0) > 0;
+    return numberOfPaths(new Position(0, 0), new HashSet<>()) > 0;
   }
 
-  private int numberOfPaths(int fromX, int fromY){
+  private int numberOfPaths(Position from, Set<Position> alreadyChecked){
     int endX = width - 1;
     int endY = height - 1;
 
-    if(fromX >= width || fromY >= height){
+    if(alreadyChecked.contains(from)){
       return 0;
     }
 
-    if(Spot.ROCK == board[fromX][fromY]){
+    alreadyChecked.add(from);
+
+    if(from.x < 0 || from.x >= width || from.y < 0 || from.y >= height){
       return 0;
     }
 
-    if(fromX == endX && fromY == endY){
+    if(Spot.ROCK == getSpotAt(from)){
+      return 0;
+    }
+
+    if(from.x == endX && from.y == endY){
       return 1;
     }
 
-    return numberOfPaths(fromX + 1, fromY) + numberOfPaths(fromX, fromY + 1);
+    return  numberOfPaths(from.up(), alreadyChecked)
+          + numberOfPaths(from.down(), alreadyChecked)
+          + numberOfPaths(from.left(), alreadyChecked)
+          + numberOfPaths(from.right(), alreadyChecked);
   }
 }
