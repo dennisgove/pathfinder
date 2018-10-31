@@ -1,5 +1,6 @@
 package pathfinder;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -13,7 +14,7 @@ public class GameBoard {
 
   private Spot[][] board;
   private Position position;
-  private Set<Position> visited;
+  private HashMap<Position, Integer> visited;
   private MoveSelector moveSelector;
 
   /**
@@ -34,7 +35,7 @@ public class GameBoard {
   public void play(int width, int height, int numberRocks) throws InterruptedException{
     this.width = width;
     this.height = height;
-    this.visited = new HashSet<>();
+    this.visited = new HashMap<>();
 
     resetLayout(numberRocks);
 
@@ -59,7 +60,7 @@ public class GameBoard {
    * @return true if player has visited the position, false else
    */
   public boolean haveVisited(Position position){
-    return visited.contains(position);
+    return visited.containsKey(position) && visited.get(position) > 0;
   }
 
   /**
@@ -77,7 +78,13 @@ public class GameBoard {
 
   private void moveTo(Position position){
     this.position = position;
-    visited.add(position);
+
+    visited.putIfAbsent(position, 0);
+    visited.put(position, visited.get(position) + 1);
+  }
+
+  public int visitedCount(Position position){
+    return visited.getOrDefault(position, 0);
   }
 
   private void resetLayout(int totalRocks){
