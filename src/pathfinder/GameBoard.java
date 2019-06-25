@@ -8,8 +8,8 @@ public class GameBoard {
 
   private int delay = 750;
 
-  private int width;
-  private int height;
+  public int width;
+  public int height;
 
   private Spot[][] board;
   private Position position;
