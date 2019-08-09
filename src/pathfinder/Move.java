@@ -11,5 +11,20 @@ public enum Move {
   LEFT,
   RIGHT,
   UP,
-  DOWN
+  DOWN;
+
+  public static Move opposite(Move incoming){
+    switch(incoming){
+      case DOWN:
+        return Move.UP;
+      case UP:
+        return Move.DOWN;
+      case RIGHT:
+        return Move.LEFT;
+      case LEFT:
+      default:
+        return Move.RIGHT;
+
+    }
+  }
 }
